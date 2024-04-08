@@ -1,0 +1,387 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="14.0">
+  <PropertyGroup>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectVersion>7.0</ProjectVersion>
+    <ToolchainName>com.Atmel.ARMGCC.C</ToolchainName>
+    <ProjectGuid>{434d1453-376d-4606-80af-12f77a6947e1}</ProjectGuid>
+    <avrdevice>ATSAML11E16A</avrdevice>
+    <avrdeviceseries>none</avrdeviceseries>
+    <OutputType>Executable</OutputType>
+    <Language>C</Language>
+    <OutputFileName>$(MSBuildProjectName)</OutputFileName>
+    <OutputFileExtension>.elf</OutputFileExtension>
+    <OutputDirectory>$(MSBuildProjectDirectory)\$(Configuration)</OutputDirectory>
+    <AssemblyName>NonSecureApp</AssemblyName>
+    <Name>NonSecureApp</Name>
+    <RootNamespace>NonSecureApp</RootNamespace>
+    <ToolchainFlavour>Native</ToolchainFlavour>
+    <SoftwareModel>Non-secure</SoftwareModel>
+    <KeepTimersRunning>true</KeepTimersRunning>
+    <OverrideVtor>false</OverrideVtor>
+    <CacheFlash>true</CacheFlash>
+    <ProgFlashFromRam>true</ProgFlashFromRam>
+    <RamSnippetAddress>0x20000000</RamSnippetAddress>
+    <UncachedRange />
+    <preserveEEPROM>true</preserveEEPROM>
+    <OverrideVtorValue>exception_table</OverrideVtorValue>
+    <BootSegment>2</BootSegment>
+    <ResetRule>0</ResetRule>
+    <eraseonlaunchrule>1</eraseonlaunchrule>
+    <AsfFrameworkConfig>
+      <framework-data>
+        <options />
+        <configurations />
+        <files />
+        <documentation help="" />
+        <offline-documentation help="" />
+        <dependencies>
+          <content-extension eid="atmel.asf" uuidref="Atmel.ASF" version="3.42.0" />
+        </dependencies>
+      </framework-data>
+    </AsfFrameworkConfig>
+    <avrtool>com.atmel.avrdbg.tool.edbg</avrtool>
+    <avrdeviceexpectedsignature>0x20830000</avrdeviceexpectedsignature>
+    <avrtoolinterface>SWD</avrtoolinterface>
+    <com_atmel_avrdbg_tool_edbg>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>2000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>SWD</InterfaceName>
+      </ToolOptions>
+      <ToolType>com.atmel.avrdbg.tool.edbg</ToolType>
+      <ToolName>EDBG</ToolName>
+      <ToolNumber>ATML3138071800002212</ToolNumber>
+    </com_atmel_avrdbg_tool_edbg>
+    <avrtoolinterfaceclock>2000000</avrtoolinterfaceclock>
+    <EraseKey />
+    <AdditionalModules>
+      <Module>
+        <File>..\..\SecureApp\Debug\SecureApp.elf</File>
+        <EraseRule>1</EraseRule>
+      </Module>
+    </AdditionalModules>
+    <avrtoolserialnumber>ATML3138071800002212</avrtoolserialnumber>
+    <custom>
+      <ToolOptions>
+        <InterfaceProperties>
+          <SwdClock>2000000</SwdClock>
+        </InterfaceProperties>
+        <InterfaceName>
+        </InterfaceName>
+      </ToolOptions>
+      <ToolType>custom</ToolType>
+      <ToolNumber>
+      </ToolNumber>
+      <ToolName>Custom Programming Tool</ToolName>
+    </custom>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <ToolchainSettings>
+      <ArmGcc>
+  <armgcc.common.outputfiles.hex>True</armgcc.common.outputfiles.hex>
+  <armgcc.common.outputfiles.lss>True</armgcc.common.outputfiles.lss>
+  <armgcc.common.outputfiles.eep>True</armgcc.common.outputfiles.eep>
+  <armgcc.common.outputfiles.bin>True</armgcc.common.outputfiles.bin>
+  <armgcc.common.outputfiles.srec>True</armgcc.common.outputfiles.srec>
+  <armgcc.compiler.symbols.DefSymbols>
+    <ListValues>
+      <Value>DEBUG</Value>
+    </ListValues>
+  </armgcc.compiler.symbols.DefSymbols>
+  <armgcc.compiler.directories.IncludePaths>
+    <ListValues>
+      <Value>../../SecureApp</Value>
+      <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAML11_DFP\1.0.109\include</Value>
+    </ListValues>
+  </armgcc.compiler.directories.IncludePaths>
+  <armgcc.compiler.optimization.level>Optimize most (-O3)</armgcc.compiler.optimization.level>
+  <armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>True</armgcc.compiler.optimization.PrepareFunctionsForGarbageCollection>
+  <armgcc.compiler.optimization.DebugLevel>Maximum (-g3)</armgcc.compiler.optimization.DebugLevel>
+  <armgcc.compiler.warnings.AllWarnings>True</armgcc.compiler.warnings.AllWarnings>
+  <armgcc.linker.general.UseNewlibNano>True</armgcc.linker.general.UseNewlibNano>
+  <armgcc.linker.general.AdditionalSpecs>Use syscall stubs (--specs=nosys.specs)</armgcc.linker.general.AdditionalSpecs>
+  <armgcc.linker.libraries.Libraries>
+    <ListValues>
+      <Value>secureapp-cmse-implib.lib</Value>
+      <Value>libm</Value>
+    </ListValues>
+  </armgcc.linker.libraries.Libraries>
+  <armgcc.linker.libraries.LibrarySearchPaths>
+    <ListValues>
+      <Value>..\..\SecureApp\Debug</Value>
+      <Value>%24(ProjectDir)\Device_Startup</Value>
+    </ListValues>
+  </armgcc.linker.libraries.LibrarySearchPaths>
+  <armgcc.linker.optimization.GarbageCollectUnusedSections>True</armgcc.linker.optimization.GarbageCollectUnusedSections>
+  <armgcc.linker.memorysettings.ExternalRAM />
+  <armgcc.linker.miscellaneous.LinkerFlags>-Tsaml11e16a_flash.ld</armgcc.linker.miscellaneous.LinkerFlags>
+  <armgcc.assembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAML11_DFP\1.0.109\include</Value>
+    </ListValues>
+  </armgcc.assembler.general.IncludePaths>
+  <armgcc.assembler.debugging.DebugLevel>Default (-g)</armgcc.assembler.debugging.DebugLevel>
+  <armgcc.preprocessingassembler.general.IncludePaths>
+    <ListValues>
+      <Value>%24(PackRepoDir)\arm\CMSIS\5.4.0\CMSIS\Core\Include\</Value>
+      <Value>%24(PackRepoDir)\atmel\SAML11_DFP\1.0.109\include</Value>
+    </ListValues>
+  </armgcc.preprocessingassembler.general.IncludePaths>
+  <armgcc.preprocessingassembler.debugging.DebugLevel>Default (-Wa,-g)</armgcc.preprocessingassembler.debugging.DebugLevel>
+</ArmGcc>
+    </ToolchainSettings>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="..\SecureApp\veneer.h">
+      <SubType>compile</SubType>
+      <Link>veneer.h</Link>
+    </Compile>
+    <Compile Include="Device_Startup\startup_saml11e16a.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Device_Startup\system_saml11e16a.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\c25519.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\c25519.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\ed25519.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\ed25519.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\edsign.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\edsign.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\f25519.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\f25519.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\fprime.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\fprime.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\morph25519.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\morph25519.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\sha512.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="ed25519\sha512.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio\delay.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio\DHT.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio\hal_gpio.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio\plib_rtc.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio\plib_rtc.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio\timer.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio\timer.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio\uart.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="gpio\uart.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Hacl_HMAC_SHA2_256.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="Hacl_HMAC_SHA2_256.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hmac-sha256.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="hmac-sha256.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="kremlib.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="main.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="pox.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\endian.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\endian.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\fips202.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\fips202.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\get_space.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\get_space.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\get_space2.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\get_space2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\internal.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\key_gen.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\oak_sphincs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\oak_sphincs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha2.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha256.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha256_hash.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha256_L1_hash.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha256_L1_hash_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha2_128f_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha2_128s_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha2_192f_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha2_192s_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha2_256f_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha2_256s_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha2_func.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha2_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha512.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha512_hash.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\sha512_L35_hash_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\shake256_128f_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\shake256_128s_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\shake256_192f_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\shake256_192s_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\shake256_256f_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\shake256_256s_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\shake256_func.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\shake256_hash.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\shake256_simple.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\size.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\stack.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\stack.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\tiny_sphincs.c">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\tiny_sphincs.h">
+      <SubType>compile</SubType>
+    </Compile>
+    <Compile Include="sphincs\verify.c">
+      <SubType>compile</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Device_Startup\" />
+    <Folder Include="ed25519\" />
+    <Folder Include="gpio" />
+    <Folder Include="sphincs\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Device_Startup\saml11e16a_flash.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="Device_Startup\saml11e16a_sram.ld">
+      <SubType>compile</SubType>
+    </None>
+    <None Include="sphincs\README.md">
+      <SubType>compile</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(AVRSTUDIO_EXE_PATH)\\Vs\\Compiler.targets" />
+</Project>

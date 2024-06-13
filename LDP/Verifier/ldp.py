@@ -25,7 +25,7 @@ counter = 0xff
 
 def genInitRequest():
     global counter
-    func = 0x85cc
+    func = 0x80402f1
     input =  b'\x00'*12
     reqWithoutCommand = p32(counter) + p32(func) + input
     req = b'[stp]' + reqWithoutCommand
@@ -42,7 +42,7 @@ def floatToBytes(f):
 
 def genLDPRequest():
     global counter
-    func = 0x8980
+    func = 0x80405b5
     f = 0.23456
     p = 0.1256
     q = 0.8121
@@ -67,12 +67,12 @@ def print_bytes(bytes_data):
         print("\\x{:02X}".format(byte), end='')
 
 def new_single(command):
-    print("Waiting...")
-    out = ser.readline()
-    print('Recv', out)
-    if b'[' not in out and b']' not in out:
-        return
-    sleep(.1)
+    #print("Waiting...")
+    #out = ser.readline()
+    #print('Recv', out)
+    #if b'[' not in out and b']' not in out:
+    #    return
+    #sleep(.1)
     start = time.time()
     if command == 'i':
         req, token, reqWithCommand = genInitRequest()
@@ -82,51 +82,47 @@ def new_single(command):
     print_bytes(payload)
     print("")
     print("Payload: ", payload, len(payload))
+    print('Phase 1 takes:', time.time()-start)
     ser.write(payload)
 
-    prev = ""
+    prev = b""
+
+    rec = False
 
     while True:
         out = ser.readline()
-        print("Receive: ", out)
-        if b'[S]' in out:
-            print("Cur time:", time.time()-start)
-
-        if b'[OS]' in out and b'[OE]' not in out:
-            print("HMMM")
-            # keep reading until it hits [OE]
-            while b'[OE]' not in out:
-                out = out + ser.readline()
-                print("Receive: ", out)
-
+        print("Receive: ", out, time.time()-start)
         if command == 'c' and b'[Test]' in out:
             print("Plug in Arduino to proceed")
         if b'[Over]' in out:
             # do something with prev
             output = prev[4:4+32]
             token = prev[32+4+1: 32+5+32]
-            print("Output: ", output)
-            print("Token: ", token)
+            print("Output: ", output, type(output))
+            #print("Token: ", token)
+            #print_bytes(token)
+            #print("Done")
             #print_bytes(token)
             #print()
 
             # Simulate A4 attack which modifies the output
             if command == 'c' and ATTACK_A4:
-                output = [0x11] * len(output)
+                output = bytearray([0x11] * len(output))
 
             rToken = recomputeToken(reqWithCommand, output)
             if rToken == token:
                 print("Token verification succeeds")
             else:
+                #print("Token verification fails")
                 raise Exception("Token verification fails. Aborting")
 
             print("Command:", command, "takes", time.time()-start)
-            if command == 'c':
-                print("You have 10 secs to unplug Arduino.")
-            time.sleep(10)
-            ser.write(b'OAK')
             return
-        prev = out
+        elif b'[OS]' in out:
+            rec = True
+
+        if rec:
+            prev += out
 
 
 def read_text_section(filename):
@@ -143,18 +139,20 @@ def recomputeToken(reqWithoutCommand, output):
 
     h = SHA256.new(reqWithoutCommand)
 
-    filename = "NonSecureApp.elf"
+    filename = "TRACES_NonSecure.elf"
 
     text_section_data = read_text_section(filename)
-    #text_section_data += b'\x00'*(0x8000-len(text_section_data))
+    code_size = 0x1000
+
+    text_section_data = text_section_data[:code_size]
     #print_bytes(text_section_data)
     #print()
-    print(len(text_section_data))
+    #print(len(text_section_data))
 
     h.update(text_section_data)
-    h.update(output)
-    #print('Recomputed Hash:', h.hexdigest())
 
+    h.update(output)
+    print('Recomputed Hash:', h.hexdigest())
 
     token = HMAC.new(HMAC_KEY, h.digest(), digestmod=SHA256)
     print('Recomputed Token:', token.hexdigest())
@@ -163,7 +161,7 @@ def recomputeToken(reqWithoutCommand, output):
 
 if __name__ == '__main__':
     ser = serial.Serial(
-        port="COM6", baudrate=115200, bytesize=8, stopbits=serial.STOPBITS_ONE
+        port="COM4", baudrate=921600, bytesize=8, stopbits=serial.STOPBITS_ONE
     )
     if not ser.isOpen():
         ser.open()
@@ -178,8 +176,3 @@ if __name__ == '__main__':
 
             except KeyboardInterrupt:
                 ser.close()
-        #finally:
-            #print('done single')
-            #ser.close()
-            #if not ser.isOpen():
-            #    print("Program,Serial comm is closed")

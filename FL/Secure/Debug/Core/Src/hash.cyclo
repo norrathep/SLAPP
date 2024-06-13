@@ -1,0 +1,4 @@
+../Core/Src/hash.c:10:6:MX_HASH_Init	2
+../Core/Src/hash.c:30:19:HASH_SHA_265	1
+../Core/Src/hash.c:35:19:HMAC_SHA_265	1
+../Core/Src/hash.c:39:6:set_hmac_key	1

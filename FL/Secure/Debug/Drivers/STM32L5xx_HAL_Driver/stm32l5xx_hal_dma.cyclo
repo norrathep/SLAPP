@@ -1,0 +1,14 @@
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:150:19:HAL_DMA_Init	6
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:262:19:HAL_DMA_DeInit	4
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:379:19:HAL_DMA_Start	5
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:422:19:HAL_DMA_Start_IT	8
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:491:19:HAL_DMA_Abort	3
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:548:19:HAL_DMA_Abort_IT	4
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:609:19:HAL_DMA_PollForTransfer	15
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:737:6:HAL_DMA_IRQHandler	20
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:885:19:HAL_DMA_RegisterCallback	9
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:944:19:HAL_DMA_UnRegisterCallback	10
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:1032:22:HAL_DMA_GetState	1
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:1044:10:HAL_DMA_GetError	1
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:1086:19:HAL_DMA_ConfigChannelAttributes	16
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/FL/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_dma.c:1216:19:HAL_DMA_GetConfigChannelAttributes	3

@@ -1,0 +1,4 @@
+../Core/Src/Crypto/sphincs/verify.c:55:13:next_auth_path.constprop	2
+../Core/Src/Crypto/sphincs/verify.c:30:6:ts_init_verify	2
+../Core/Src/Crypto/sphincs/verify.c:101:5:ts_update_verify	18
+../Core/Src/Crypto/sphincs/verify.c:243:5:ts_verify	2

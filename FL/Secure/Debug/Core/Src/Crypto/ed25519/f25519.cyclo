@@ -1,0 +1,13 @@
+../Core/Src/Crypto/ed25519/f25519.c:12:6:f25519_load	1
+../Core/Src/Crypto/ed25519/f25519.c:25:6:f25519_normalize	3
+../Core/Src/Crypto/ed25519/f25519.c:60:9:f25519_eq	1
+../Core/Src/Crypto/ed25519/f25519.c:75:6:f25519_select	4
+../Core/Src/Crypto/ed25519/f25519.c:86:6:f25519_add	3
+../Core/Src/Crypto/ed25519/f25519.c:109:6:f25519_sub	3
+../Core/Src/Crypto/ed25519/f25519.c:133:6:f25519_neg	3
+../Core/Src/Crypto/ed25519/f25519.c:157:6:f25519_mul__distinct	6
+../Core/Src/Crypto/ed25519/f25519.c:186:6:f25519_mul	1
+../Core/Src/Crypto/ed25519/f25519.c:194:6:f25519_mul_c	3
+../Core/Src/Crypto/ed25519/f25519.c:216:6:f25519_inv__distinct	2
+../Core/Src/Crypto/ed25519/f25519.c:266:6:f25519_inv	1
+../Core/Src/Crypto/ed25519/f25519.c:304:6:f25519_sqrt	6

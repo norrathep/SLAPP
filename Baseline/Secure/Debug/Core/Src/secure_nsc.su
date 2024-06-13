@@ -1,0 +1,11 @@
+../Core/Src/secure_nsc.c:303:5:optrand_rng	8	static
+../Core/Src/secure_nsc.c:162:5:verify_req.part.0	2320	static
+../Core/Src/secure_nsc.c:55:20:SECURE_RegisterCallback	0	static
+../Core/Src/secure_nsc.c:72:20:SECURE_send	8	static
+../Core/Src/secure_nsc.c:76:20:SECURE_recv	8	static
+../Core/Src/secure_nsc.c:80:19:SECURE_avg	0	static
+../Core/Src/secure_nsc.c:162:5:verify_req	0	static
+../Core/Src/secure_nsc.c:258:5:check_request	8	static
+../Core/Src/secure_nsc.c:310:9:read1	0	static
+../Core/Src/secure_nsc.c:314:9:read2	0	static
+../Core/Src/secure_nsc.c:326:20:SECURE_pox	2424	static,ignoring_inline_asm

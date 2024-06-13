@@ -1,0 +1,2 @@
+../Core/Src/Crypto/sphincs/endian.c:7:20:ts_bytes_to_ull	4	static
+../Core/Src/Crypto/sphincs/endian.c:19:6:ts_ull_to_bytes	0	static

@@ -1,0 +1,6 @@
+../Core/Src/Hacl_HMAC_SHA2_256.c:49:13:Hacl_Impl_SHA2_256_init	32	static
+../Core/Src/Hacl_HMAC_SHA2_256.c:157:13:Hacl_Impl_SHA2_256_update	144	static
+../Core/Src/Hacl_HMAC_SHA2_256.c:251:13:Hacl_Impl_SHA2_256_update_last	152	static
+../Core/Src/Hacl_HMAC_SHA2_256.c:308:1:Hacl_Impl_HMAC_SHA2_256_hmac_core	1408	static
+../Core/Src/Hacl_HMAC_SHA2_256.c:359:6:hmac_core	0	static
+../Core/Src/Hacl_HMAC_SHA2_256.c:364:6:hmac	648	static

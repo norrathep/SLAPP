@@ -1,0 +1,5 @@
+../Core/Src/Crypto/sphincs/get_space2.c:26:12:fake_rand	3
+../Core/Src/Crypto/sphincs/get_space2.c:38:6:run_keygen	1
+../Core/Src/Crypto/sphincs/get_space2.c:47:6:run_sign	2
+../Core/Src/Crypto/sphincs/get_space2.c:61:5:run_verify	1
+../Core/Src/Crypto/sphincs/get_space2.c:82:16:get_sig_and_public_key	2

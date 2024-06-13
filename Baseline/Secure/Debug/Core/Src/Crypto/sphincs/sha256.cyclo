@@ -1,0 +1,6 @@
+../Core/Src/Crypto/sphincs/sha256.c:110:6:ts_SHA256_init	1
+../Core/Src/Crypto/sphincs/sha256.c:123:6:ts_SHA256_update	9
+../Core/Src/Crypto/sphincs/sha256.c:160:6:ts_SHA256_final_trunc	4
+../Core/Src/Crypto/sphincs/sha256.c:156:6:ts_SHA256_final	1
+../Core/Src/Crypto/sphincs/sha256.c:183:6:ts_SHA256_save_state	2
+../Core/Src/Crypto/sphincs/sha256.c:189:6:ts_SHA256_restore_state_after_64	2

@@ -1,0 +1,2 @@
+../Core/Src/Crypto/sphincs/sha256_hash.c:19:6:ts_sha2_prf	1
+../Core/Src/Crypto/sphincs/sha256_hash.c:35:6:ts_sha256_init_ctx	1

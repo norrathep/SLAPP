@@ -1,0 +1,8 @@
+../Core/Src/main.c:70:6:SecureFault_Callback	8	static,ignoring_inline_asm
+../Core/Src/main.c:77:6:SecureError_Callback	8	static
+../Core/Src/main.c:63:6:RaiseSecureFault	0	static
+../Core/Src/main.c:111:6:sendline	0	static
+../Core/Src/main.c:120:6:print_token	24	static
+../Core/Src/main.c:130:6:pox_wrapper	272	static
+../Core/Src/main.c:213:5:main	8	static
+../Core/Src/main.c:268:6:Error_Handler	0	static,ignoring_inline_asm

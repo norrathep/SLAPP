@@ -1,0 +1,4 @@
+../Core/Src/Crypto/sphincs/sha256_L1_hash_simple.c:29:6:ts_sha2_L1_init_t_simple	16	static
+../Core/Src/Crypto/sphincs/sha256_L1_hash_simple.c:37:6:ts_sha2_L1_next_t_simple	0	static
+../Core/Src/Crypto/sphincs/sha256_L1_hash_simple.c:45:6:ts_sha2_L1_final_t_simple	0	static
+../Core/Src/Crypto/sphincs/sha256_L1_hash_simple.c:59:6:ts_sha2_L1_prehash	24	static

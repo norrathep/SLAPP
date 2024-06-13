@@ -1,0 +1,2 @@
+../Core/Src/Crypto/ed25519/morph25519.c:10:6:morph25519_e2m	80	static
+../Core/Src/Crypto/ed25519/morph25519.c:75:9:morph25519_m2e	120	static

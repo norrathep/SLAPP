@@ -1,0 +1,4 @@
+../Core/Src/Crypto/sphincs/sha512_L35_hash_simple.c:28:6:ts_sha2_L35_init_t_simple	16	static
+../Core/Src/Crypto/sphincs/sha512_L35_hash_simple.c:35:6:ts_sha2_L35_next_t_simple	0	static
+../Core/Src/Crypto/sphincs/sha512_L35_hash_simple.c:43:6:ts_sha2_L35_final_t_simple	0	static
+../Core/Src/Crypto/sphincs/sha512_L35_hash_simple.c:60:6:ts_sha2_L35_prehash	24	static

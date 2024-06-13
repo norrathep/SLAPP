@@ -1,0 +1,9 @@
+../Core/Src/Hacl_SHA2_256.c:157:13:Hacl_Impl_SHA2_256_update	5
+../Core/Src/Hacl_SHA2_256.c:251:13:Hacl_Impl_SHA2_256_update_last	3
+../Core/Src/Hacl_SHA2_256.c:284:13:Hacl_Impl_SHA2_256_hash	3
+../Core/Src/Hacl_SHA2_256.c:303:6:Hacl_SHA2_256_init	1
+../Core/Src/Hacl_SHA2_256.c:308:6:Hacl_SHA2_256_update	1
+../Core/Src/Hacl_SHA2_256.c:313:6:Hacl_SHA2_256_update_multi	3
+../Core/Src/Hacl_SHA2_256.c:318:6:Hacl_SHA2_256_update_last	1
+../Core/Src/Hacl_SHA2_256.c:323:6:Hacl_SHA2_256_finish	1
+../Core/Src/Hacl_SHA2_256.c:328:6:Hacl_SHA2_256_hash	1

@@ -1,0 +1,9 @@
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_flash_ex.c:169:19:HAL_FLASHEx_Erase	32	static
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_flash_ex.c:239:19:HAL_FLASHEx_Erase_IT	16	static
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_flash_ex.c:305:19:HAL_FLASHEx_OBProgram	16	static
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_flash_ex.c:390:6:HAL_FLASHEx_OBGetConfig	0	static
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_flash_ex.c:584:6:HAL_FLASHEx_ConfigPrivMode	0	static
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_flash_ex.c:600:10:HAL_FLASHEx_GetPrivMode	0	static
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_flash_ex.c:664:19:HAL_FLASHEx_ConfigLVEPin	16	static
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_flash_ex.c:716:10:HAL_FLASHEx_GetLVEPin	0	static
+C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Drivers/STM32L5xx_HAL_Driver/Src/stm32l5xx_hal_flash_ex.c:799:6:FLASH_PageErase	0	static

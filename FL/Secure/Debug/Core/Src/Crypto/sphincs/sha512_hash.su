@@ -1,0 +1,3 @@
+../Core/Src/Crypto/sphincs/sha512_hash.c:10:6:ts_sha2_L35_prf_msg	256	static
+../Core/Src/Crypto/sphincs/sha512_hash.c:42:6:ts_sha2_L35_hash_msg	256	static
+../Core/Src/Crypto/sphincs/sha512_hash.c:79:6:ts_sha512_init_ctx	0	static

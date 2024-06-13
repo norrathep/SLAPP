@@ -1,0 +1,2 @@
+../Core/Src/Crypto/sphincs/sha256_L1_hash.c:16:6:ts_sha2_L1_prf_msg	160	static
+../Core/Src/Crypto/sphincs/sha256_L1_hash.c:51:6:ts_sha2_L1_hash_msg	192	static

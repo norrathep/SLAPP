@@ -1,0 +1,5 @@
+../Core/Src/Crypto/sphincs/get_space2.c:26:12:fake_rand	0	static
+../Core/Src/Crypto/sphincs/get_space2.c:38:6:run_keygen	0	static
+../Core/Src/Crypto/sphincs/get_space2.c:47:6:run_sign	1152	static
+../Core/Src/Crypto/sphincs/get_space2.c:61:5:run_verify	1144	static
+../Core/Src/Crypto/sphincs/get_space2.c:82:16:get_sig_and_public_key	1296	static

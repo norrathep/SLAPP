@@ -1,0 +1,11 @@
+../Core/Src/secure_nsc.c:55:20:SECURE_RegisterCallback	0	static
+../Core/Src/secure_nsc.c:72:20:SECURE_send	8	static
+../Core/Src/secure_nsc.c:76:20:SECURE_recv	8	static
+../Core/Src/secure_nsc.c:104:20:SECURE_setState	152	static
+../Core/Src/secure_nsc.c:118:20:SECURE_checkState	152	static
+../Core/Src/secure_nsc.c:129:5:verify_req	384	static
+../Core/Src/secure_nsc.c:152:5:check_request	8	static
+../Core/Src/secure_nsc.c:157:6:init_flags	4	static
+../Core/Src/secure_nsc.c:161:6:reset_flags	0	static
+../Core/Src/secure_nsc.c:165:23:SECURE_energy_read	16	static
+../Core/Src/secure_nsc.c:172:20:SECURE_pox	400	static,ignoring_inline_asm

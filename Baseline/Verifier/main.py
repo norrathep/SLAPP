@@ -32,6 +32,7 @@ ECC_PK_STR = b'\x74\x2F\xBE\xAF\x4F\xF4\x1D\x27\x48\xAD\x4E\x23\x84\x79\xA4\x42\
 ECC_PK = ecdsa.VerifyingKey.from_string(ECC_PK_STR, curve=ecdsa.NIST256p, hashfunc=sha256)
 assert(ECC_SK.get_verifying_key() == ECC_PK)
 
+
 ED25519_SK = bytes([0xf5, 0xe9, 0xe2, 0x5e, 0x53, 0x60, 0xaa, 0xd2,
 	0xb2, 0xd0, 0x85, 0xfa, 0x54, 0xd8, 0x35, 0xe8,
 	0xd4, 0x66, 0x82, 0x64, 0x98, 0xd9, 0xa8, 0x87,
@@ -65,7 +66,7 @@ def sphincTest():
 
 def genRawRequest():
     counter = 0xff
-    f = 0x85bc
+    f =  0x804041d
     inp = 0x11
     req = p32(counter) + p32(f) + p8(inp)
     return req
@@ -81,12 +82,12 @@ def genRequest():
     elif CRYPTO == CRYPTO_ECC:
         # Sign uses SHA256 in the underlying algorithm
         token = ECC_SK.sign_deterministic(req)
-        print('Sig:', token.hex(), len(token))
+        print('ECC Sig:', token.hex(), len(token))
         return req, token
     elif CRYPTO == CRYPTO_ED25519:
         token = ED25519_SK.sign(h.digest())
         token = token[:64]
-        print('Sig:', HexEncoder.encode(token))
+        print('ED Sig:', HexEncoder.encode(token))
         return req, token
 
 def verifyRequest(req, token):
@@ -184,17 +185,18 @@ def stream_sphincs_sig():
     loadedSig = load_sphincs_sig()
     start = 0
     chunkSize = 1024
+    print('in stream sphincs sig fn')
 
     timestart = time.time()
-    sig = b''
     while True:
         line = ser.readline()
+        print('K', line)
         if 'SPHINCSPHINC' in str(line):
-            print('This chunk ', start, start+chunkSize, line)
+            print('This chunk ', start, start+chunkSize, loadedSig[start:start + chunkSize])
             ser.write(loadedSig[start:start + chunkSize])
 
-            n = ser.readline()
-            print('n', n)
+            #n = ser.readline()
+            #print('n', n)
 
             start = start + chunkSize
             if chunkSize != 1024:
@@ -209,45 +211,9 @@ def stream_sphincs_sig():
 
     print('Take: ', time.time() - timestart, 'sec')
 
-def testEcdsa():
-    #private_key = ecdsa.SigningKey.generate(curve=ecdsa.NIST256p)
-    #public_key = private_key.verifying_key
-
-    sk_str = b'\x89\x8b\x0c\xde\xab\xb5\x86\x97\x3c\x0d\xa9\x15\x8e\x01\x84\xe7\x43\xf7\x7c\x35\xb9\xc2\xb8\xf7\x93\x62\x92\x87\xca\x59\x8b\xb2'
-    private_key = ecdsa.SigningKey.from_string(sk_str, curve=ecdsa.NIST256p, hashfunc=sha256)
-
-    #pk_str = b"t/\xbe\xafO\xf4\x1d'H\xadN#\x84y\xa4Bh\x8b\xe6\x18\x98E\x99\xf1\x10\x03N\xf6^\xe1\x1eOI\xd0\x8e\xe0S\xa0\xe2}\xb5\t\xf1\xfd.\xa5cp\xc0^ 1\xc5\xc0\xcbK\x01u\xd78\xeb+D\x1b"
-    pk_str = b'\x74\x2F\xBE\xAF\x4F\xF4\x1D\x27\x48\xAD\x4E\x23\x84\x79\xA4\x42\x68\x8B\xE6\x18\x98\x45\x99\xF1\x10\x03\x4E\xF6\x5E\xE1\x1E\x4F\x49\xD0\x8E\xE0\x53\xA0\xE2\x7D\xB5\x09\xF1\xFD\x2E\xA5\x63\x70\xC0\x5E\x20\x31\xC5\xC0\xCB\x4B\x01\x75\xD7\x38\xEB\x2B\x44\x1B'
-    public_key = ecdsa.VerifyingKey.from_string(pk_str, curve=ecdsa.NIST256p, hashfunc=sha256)
-
-    byte_array = [f"0x{b:02X}" for b in pk_str]
-    c_array = "{" + ", ".join(byte_array) + "}"
-    print(c_array)
-
-
-    byte_array = [f"0x{b:02X}" for b in sk_str]
-    c_array = "{" + ", ".join(byte_array) + "}"
-    print(c_array)
-
-    message = b'abcd'
-
-    sig = private_key.sign_deterministic(
-        message,
-    )
-
-    print(len(sk_str), len(pk_str))
-
-    print("Sig: ", sig, len(sig))
-
-    result = public_key.verify(sig, message)
-    print("Verify: ", result)
-
-
 if __name__ == '__main__':
-    #testEcdsa()
-    #exit(1)
     ser = serial.Serial(
-        port="COM6", baudrate=115200, bytesize=8, stopbits=serial.STOPBITS_ONE
+        port="COM4", baudrate=921600, bytesize=8, stopbits=serial.STOPBITS_ONE
     )
     if not ser.isOpen():
         ser.open()
@@ -255,9 +221,6 @@ if __name__ == '__main__':
         if ser.isOpen():
             print("Serial com is opened")
             print(ser.name)
-
-            print('1', ser.readline())
-            time.sleep(.1)
 
             req, token = genRequest()
             reqOut = req + token

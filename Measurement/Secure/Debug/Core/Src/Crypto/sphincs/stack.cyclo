@@ -1,0 +1,2 @@
+../Core/Src/Crypto/sphincs/stack.c:23:6:init_stack	1
+../Core/Src/Crypto/sphincs/stack.c:30:10:measure_stack	3

@@ -1,0 +1,5 @@
+../Core/Src/Crypto/sphincs/fips202.c:67:13:KeccakF1600_StatePermute	288	static
+../Core/Src/Crypto/sphincs/fips202.c:555:6:ts_shake256_inc_init	8	static
+../Core/Src/Crypto/sphincs/fips202.c:559:6:ts_shake256_inc_absorb	32	static
+../Core/Src/Crypto/sphincs/fips202.c:563:6:ts_shake256_inc_finalize	8	static
+../Core/Src/Crypto/sphincs/fips202.c:567:6:ts_shake256_inc_squeeze	32	static

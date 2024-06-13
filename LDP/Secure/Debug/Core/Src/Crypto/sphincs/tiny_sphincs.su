@@ -1,0 +1,12 @@
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:84:13:set_fors_prf_adr	24	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:95:6:ts_set_fors_leaf_adr	24	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:117:6:ts_set_wots_f_adr	32	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:127:6:ts_set_merkle_adr	32	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:138:6:ts_set_fors_root_adr	24	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:147:6:ts_set_wots_header_adr	24	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:204:6:ts_merkle_path	72	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:266:6:ts_convert_message_hash_to_hypertree_position	32	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:313:6:ts_init_sign	112	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:391:6:ts_set_up_wots_signature	24	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:419:6:ts_wots_leaf	64	static
+../Core/Src/Crypto/sphincs/tiny_sphincs.c:441:10:ts_sign	88	static

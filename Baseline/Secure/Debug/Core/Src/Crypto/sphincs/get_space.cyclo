@@ -1,0 +1,4 @@
+../Core/Src/Crypto/sphincs/get_space.c:27:12:fake_rand	3
+../Core/Src/Crypto/sphincs/get_space.c:37:10:get_keygen_space	1
+../Core/Src/Crypto/sphincs/get_space.c:46:10:get_sig_space	1
+../Core/Src/Crypto/sphincs/get_space.c:60:10:get_ver_space	3

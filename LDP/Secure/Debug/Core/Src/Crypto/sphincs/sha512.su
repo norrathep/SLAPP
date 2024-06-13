@@ -1,0 +1,6 @@
+../Core/Src/Crypto/sphincs/sha512.c:127:6:ts_SHA512_init	0	static
+../Core/Src/Crypto/sphincs/sha512.c:142:6:ts_SHA512_update	120	static
+../Core/Src/Crypto/sphincs/sha512.c:179:6:ts_SHA512_final_trunc	48	static
+../Core/Src/Crypto/sphincs/sha512.c:175:6:ts_SHA512_final	0	static
+../Core/Src/Crypto/sphincs/sha512.c:202:6:ts_SHA512_save_state	0	static
+../Core/Src/Crypto/sphincs/sha512.c:208:6:ts_SHA512_restore_state_after_128	0	static

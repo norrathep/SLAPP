@@ -1,0 +1,4 @@
+../Core/Src/Crypto/ed25519/edsign.c:66:13:hash_with_prefix	104	static
+../Core/Src/Crypto/ed25519/edsign.c:58:6:edsign_sec_to_pub	272	static
+../Core/Src/Crypto/ed25519/edsign.c:115:6:edsign_sign	328	static
+../Core/Src/Crypto/ed25519/edsign.c:143:9:edsign_verify	448	static

@@ -1,0 +1,9 @@
+../Core/Src/Crypto/ed25519/fprime.c:73:6:fprime_load	1
+../Core/Src/Crypto/ed25519/fprime.c:91:6:fprime_from_bytes	19
+../Core/Src/Crypto/ed25519/fprime.c:120:6:fprime_normalize	1
+../Core/Src/Crypto/ed25519/fprime.c:128:9:fprime_eq	1
+../Core/Src/Crypto/ed25519/fprime.c:143:6:fprime_select	4
+../Core/Src/Crypto/ed25519/fprime.c:154:6:fprime_add	3
+../Core/Src/Crypto/ed25519/fprime.c:160:6:fprime_sub	4
+../Core/Src/Crypto/ed25519/fprime.c:167:6:fprime_mul	11
+../Core/Src/Crypto/ed25519/fprime.c:188:6:fprime_inv	10

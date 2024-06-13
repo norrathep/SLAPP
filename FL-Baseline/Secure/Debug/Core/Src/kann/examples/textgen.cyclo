@@ -1,0 +1,7 @@
+../Core/Src/kann/examples/textgen.c:72:6:tg_gen.constprop	18
+../Core/Src/kann/examples/textgen.c:15:12:tg_init_with_data	7
+../Core/Src/kann/examples/textgen.c:38:12:tg_init	8
+../Core/Src/kann/examples/textgen.c:72:6:tg_gen	19
+../Core/Src/kann/examples/textgen.c:116:5:tg_urnn_start	28
+../Core/Src/kann/examples/textgen.c:143:6:tg_train	31
+../Core/Src/kann/examples/textgen.c:250:9:model_gen	3

@@ -60,7 +60,7 @@ all: main-build
 main-build: TRACES_NonSecure.elf secondary-outputs
 
 dependents:
-	-cd C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Secure/Debug && $(MAKE) clean all
+	-cd C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Secure/Debug && $(MAKE) all
 
 # Tool invocations
 TRACES_NonSecure.elf TRACES_NonSecure.map: $(OBJS) $(USER_OBJS) C:/Users/super/STM32CubeIDE/workspace/SLAPP/LDP/Secure/Debug/TRACES_Secure.elf C:\Users\super\STM32CubeIDE\workspace\SLAPP\LDP\NonSecure\STM32L552ZETXQ_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)

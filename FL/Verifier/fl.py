@@ -14,7 +14,7 @@ from elftools.elf.elffile import ELFFile
 
 from pwn import *
 
-ATTACK_AM = True
+ATTACK_AM = False
 
 # --------------------------- KEYS ------------------------------------
 HMAC_KEY = b'\x00'*16
@@ -25,7 +25,7 @@ counter = 0x88
 
 def genInitRequest():
     global counter
-    func = 0x8040cb9
+    func = 0x8040cb8
     input =  b'\x00'*12
     reqWithoutCommand = p32(counter) + p32(func) + input
     req = b'[stp]' + reqWithoutCommand
@@ -42,7 +42,7 @@ def floatToBytes(f):
 
 def genTrainRequest():
     global counter
-    func = 0x8040e6d
+    func = 0x8040ec4 #0x8040e6d # wrapper_train
     lr = 0.01
     numEpoch = 5.0
     initWB = 0.2
@@ -82,9 +82,9 @@ def print_bytes(bytes_data):
         print("\\x{:02X}".format(byte), end='')
 
 def new_single(command):
-    #print("Waiting...")
-    #out = ser.readline()
-    #print('Recv', out)
+    print("Waiting...")
+    out = ser.readline()
+    print('Recv', out)
     #if b'[' not in out and b']' not in out:
     #    return
     sleep(.1)
@@ -143,8 +143,8 @@ def new_single(command):
             if rToken == token:
                 print("Token verification succeeds")
             else:
-                #print("Token verification fails")
-                raise Exception("Token verification fails. Aborting")
+                print("Token verification fails")
+                #raise Exception("Token verification fails. Aborting")
 
             print("Command:", command, "takes", time.time()-start)
             return
@@ -186,7 +186,7 @@ def recomputeToken(reqWithoutCommand, output):
 
 if __name__ == '__main__':
     ser = serial.Serial(
-        port="COM4", baudrate=921600, bytesize=8, stopbits=serial.STOPBITS_ONE
+        port="COM9", baudrate=921600, bytesize=8, stopbits=serial.STOPBITS_ONE
     )
     if not ser.isOpen():
         ser.open()

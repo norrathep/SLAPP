@@ -4872,7 +4872,7 @@ LOAD C:/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
  .debug_line    0x000054ae      0xe9e ./Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_cortex.o
  .debug_line    0x0000634c      0xe91 ./Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_gpio.o
 
-.debug_str      0x00000000   0x1017c3
+.debug_str      0x00000000   0x10177d
  .debug_str     0x00000000    0xf9e09 ./Core/Src/gpio.o
                               0xfa0e0 (size before relaxing)
  .debug_str     0x000f9e09     0x3883 ./Core/Src/main.o
@@ -4887,12 +4887,13 @@ LOAD C:/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                                0x60f2 (size before relaxing)
  .debug_str     0x00100375       0x84 ./Core/Src/system_stm32l5xx_ns.o
                               0xf9de6 (size before relaxing)
- .debug_str     0x001003f9       0x8b ./Core/Startup/startup_stm32l552zetxq.o
- .debug_str     0x00100484      0xbd7 ./Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal.o
+ .debug_str     0x001003f9       0x45 ./Core/Startup/startup_stm32l552zetxq.o
+                                 0x85 (size before relaxing)
+ .debug_str     0x0010043e      0xbd7 ./Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal.o
                               0xfac39 (size before relaxing)
- .debug_str     0x0010105b      0x4db ./Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_cortex.o
+ .debug_str     0x00101015      0x4db ./Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_cortex.o
                               0xfaa40 (size before relaxing)
- .debug_str     0x00101536      0x28d ./Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_gpio.o
+ .debug_str     0x001014f0      0x28d ./Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_gpio.o
                               0xfa106 (size before relaxing)
 
 .comment        0x00000000       0x43
@@ -4977,6 +4978,6 @@ LOAD C:/ST/STM32CubeIDE_1.10.1/STM32CubeIDE/plugins/com.st.stm32cube.ide.mcu.ext
                 0x0000191c      0x30c ./Drivers/STM32L5xx_HAL_Driver/stm32l5xx_hal_gpio.o
 
 .debug_line_str
-                0x00000000       0x6f
+                0x00000000       0x69
  .debug_line_str
-                0x00000000       0x6f ./Core/Startup/startup_stm32l552zetxq.o
+                0x00000000       0x69 ./Core/Startup/startup_stm32l552zetxq.o

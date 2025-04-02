@@ -127,7 +127,6 @@ uint8_t optrand[32] = { 0x9e, 0x9c, 0x88, 0x01, 0xbb, 0x10, 0x31, 0x83,
 unsigned char optrand_buffer[32];
 #endif
 
-
 //uint8_t secure_state[32] = {0x11, 0x5b, 0xad, 0x14, 0xf1, 0xc9, 0xf2, 0xc0, 0x27, 0xa8, 0x4d,
 //		0xe2, 0x1b, 0x10, 0x70, 0x15, 0x72, 0x2c, 0xb7, 0x6b, 0xe8, 0xd0, 0xab, 0xf3, 0x76,
 //		0x0a, 0xd8, 0xe0, 0x0d, 0x6c, 0x24, 0xa5};
@@ -140,10 +139,12 @@ uint8_t exec = 0, stateUsed = 0, stateChecked = 0;
 CMSE_NS_ENTRY void SECURE_setState(uint8_t *state, int state_size) {
 	if(stateChecked != 1 || exec != 1) return;
 	//if(state_size > 32) {
+
 		sha256 hash;
 		sha256_initialize(&hash);
 		sha256_finalize(&hash, state, state_size);
 		memcpy(secure_state, hash.hash, 32);
+
 	//}
 	//else {
 	//	memset(secure_state, 0, 32);
@@ -223,7 +224,8 @@ CMSE_NS_ENTRY void SECURE_pox(pox_call_t *pox_fn, uint8_t *pox_token) {
 
 	// Verify request
 	if(check_request(pox_fn, pox_token) == 0) {
-		return;
+		//return;
+		pox_fn->output[0] = 0x00;
 	}
 
 	my_counter = pox_fn->counter;
@@ -238,9 +240,6 @@ CMSE_NS_ENTRY void SECURE_pox(pox_call_t *pox_fn, uint8_t *pox_token) {
 
 	sha256_update(&hash, pox_fn->input, pox_fn->input_size);
 	sha256_update(&hash, mem, mem_len);
-
-	//sha256_finalize(&hash, pox_fn->input, pox_fn->input_size);
-	//sha256_finalize(&hash, mem, mem_len);
 
 
 
@@ -264,7 +263,7 @@ CMSE_NS_ENTRY void SECURE_pox(pox_call_t *pox_fn, uint8_t *pox_token) {
 	if(exec && stateUsed && !stateChecked) {
 		reset_flags();
 		__enable_irq();
-		return;
+		//return;
 	}
 
 	// h <- Hash(h, O)

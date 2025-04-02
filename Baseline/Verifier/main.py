@@ -213,7 +213,7 @@ def stream_sphincs_sig():
 
 if __name__ == '__main__':
     ser = serial.Serial(
-        port="COM4", baudrate=921600, bytesize=8, stopbits=serial.STOPBITS_ONE
+        port="COM9", baudrate=921600, bytesize=8, stopbits=serial.STOPBITS_ONE
     )
     if not ser.isOpen():
         ser.open()
@@ -221,6 +221,10 @@ if __name__ == '__main__':
         if ser.isOpen():
             print("Serial com is opened")
             print(ser.name)
+
+
+            line = ser.readline()
+            print('2', line)
 
             req, token = genRequest()
             reqOut = req + token

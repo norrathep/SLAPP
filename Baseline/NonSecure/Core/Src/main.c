@@ -160,7 +160,8 @@ static uint8_t *get_sphinc_sig() {
 void pox_wrapper() {
 
 	if(0) {
-	//print_str("Prv is active!\n");
+
+		//sendline("Prv is activdsfadsfdase!\n");
 
 	uint8_t buff[100] = {0};
 	//uint8_t token[32] = {0};

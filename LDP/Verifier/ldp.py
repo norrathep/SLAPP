@@ -161,7 +161,7 @@ def recomputeToken(reqWithoutCommand, output):
 
 if __name__ == '__main__':
     ser = serial.Serial(
-        port="COM4", baudrate=921600, bytesize=8, stopbits=serial.STOPBITS_ONE
+        port="COM9", baudrate=921600, bytesize=8, stopbits=serial.STOPBITS_ONE
     )
     if not ser.isOpen():
         ser.open()

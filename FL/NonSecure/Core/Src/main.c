@@ -133,7 +133,7 @@ void print_token(uint8_t *token, int size) {
 	SECURE_send("\n", 1);
 }
 
-#define INPUT_SIZE 24*5 //4*32
+#define INPUT_SIZE 1024*2 // 24*5 //4*32
 typedef struct
 {
 	uint8_t input[INPUT_SIZE];
@@ -170,6 +170,10 @@ void collect() {
 void train(float init_val, int epochs, float rate) {
 
 	sendline("HELLODD\n");
+
+	uint8_t buff[100]={};
+	sprintf(buff, "[Test] Training: lr=%d, epoch=%d done [/Test]\n", (int) (rate*10000), epochs);
+	sendline(buff);
 
 	int c, seed = 11, ulen = 1, vlen = 1, n_h_layers = 1, n_h_neurons = 8, model = 2, max_epoch = epochs, mbs = 4;
 	int use_norm = 1, batch_len = 1000, n_threads = 1, cs = 10;
@@ -217,6 +221,7 @@ void wrapper_collect() {
 
 void single() {
 
+	sendline("HelloWorld\n");
 	for(volatile int i=0; i<10000; i++);
 		uint8_t req[100]={};
 		uint8_t buff[100]={};

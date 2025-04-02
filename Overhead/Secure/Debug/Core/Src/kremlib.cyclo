@@ -1,0 +1,2 @@
+../Core/Src/kremlib.c:29:6:print_string	1
+../Core/Src/kremlib.c:33:6:print_bytes	3

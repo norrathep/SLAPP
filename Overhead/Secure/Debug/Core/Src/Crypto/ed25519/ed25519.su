@@ -1,0 +1,7 @@
+../Core/Src/Crypto/ed25519/ed25519.c:50:6:ed25519_project	16	static
+../Core/Src/Crypto/ed25519/ed25519.c:59:6:ed25519_unproject	48	static
+../Core/Src/Crypto/ed25519/ed25519.c:94:6:ed25519_pack	48	static
+../Core/Src/Crypto/ed25519/ed25519.c:108:9:ed25519_try_unpack	120	static
+../Core/Src/Crypto/ed25519/ed25519.c:156:6:ed25519_add	280	static
+../Core/Src/Crypto/ed25519/ed25519.c:231:6:ed25519_double	240	static
+../Core/Src/Crypto/ed25519/ed25519.c:298:6:ed25519_smult	280	static

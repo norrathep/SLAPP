@@ -1,0 +1,13 @@
+../Core/Src/secure_nsc.c:190:5:verify_req.part.0	3
+../Core/Src/secure_nsc.c:55:20:SECURE_RegisterCallback	4
+../Core/Src/secure_nsc.c:72:20:SECURE_send	1
+../Core/Src/secure_nsc.c:76:20:SECURE_recv	1
+../Core/Src/secure_nsc.c:80:19:SECURE_avg	1
+../Core/Src/secure_nsc.c:159:20:SECURE_setState	3
+../Core/Src/secure_nsc.c:173:20:SECURE_checkState	1
+../Core/Src/secure_nsc.c:190:5:verify_req	2
+../Core/Src/secure_nsc.c:286:5:check_request	2
+../Core/Src/secure_nsc.c:291:6:init_flags	1
+../Core/Src/secure_nsc.c:295:6:reset_flags	1
+../Core/Src/secure_nsc.c:346:5:optrand_rng	1
+../Core/Src/secure_nsc.c:351:20:SECURE_pox	6

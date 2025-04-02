@@ -12,6 +12,8 @@ This project consists of several folders.
 
 - FL-Baseline: for running a case study based on Federated Learning using Baseline_{SK}
 
+- Overhead: computing the runtime overhead w.r.t. existing work
+
 - Plot: for plotting all graphs in the paper
 
 Hardware setup (for LDP/LDP-baseline/FL/FL-Baseline):
